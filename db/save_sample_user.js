@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { mongoose } from "mongoose";
 
-function save_sample_user(){
+export function save_sample_user() {
     const usuarioSchema = new mongoose.Schema({
         nombre: String,
         edad: Number,
@@ -8,7 +8,7 @@ function save_sample_user(){
     });
     const Usuario = mongoose.model("Usuario", usuarioSchema);
     const nuevoUsuario = new Usuario({
-        nombre: "Santiago",
+        nombre: "Fernando",
         edad: 22,
         email: "maria@example.com",
     });
@@ -17,4 +17,3 @@ function save_sample_user(){
         .then(() => console.log("Usuario guardado"))
         .catch((err) => console.error("Error al guardar usuario:", err));
 }
-module.exports = {save_sample_user}

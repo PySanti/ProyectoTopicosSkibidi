@@ -1,29 +1,30 @@
 {
-  "name": "proyectotopicosskibidi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PySanti/ProyectoTopicosSkibidi.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PySanti/ProyectoTopicosSkibidi/issues"
-  },
-  "homepage": "https://github.com/PySanti/ProyectoTopicosSkibidi#readme",
-  "dependencies": {
-    "express": "^4.21.2",
-    "mongoose": "^8.8.4"
-  },
-  "devDependencies": {
-    "chai": "^5.1.2",
-    "mocha": "^11.0.1",
-    "supertest": "^7.0.0"
-  }
+    "name": "proyectotopicosskibidi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PySanti/ProyectoTopicosSkibidi.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/PySanti/ProyectoTopicosSkibidi/issues"
+    },
+    "homepage": "https://github.com/PySanti/ProyectoTopicosSkibidi#readme",
+    "dependencies": {
+        "express": "^4.21.2",
+        "mongoose": "^8.8.4"
+    },
+    "devDependencies": {
+        "chai": "^5.1.2",
+        "mocha": "^11.0.1",
+        "supertest": "^7.0.0"
+    }
 }
