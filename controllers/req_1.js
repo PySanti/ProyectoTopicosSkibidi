@@ -1,4 +1,33 @@
-export function req_1(req, res){
-    res.send("Saludos desde req 1")
-    console.log(req.params)
-}
+import axios from 'axios';
+import { getInternalJoke } from '../db/getJoke.js'; 
+
+export const req_1 = async (req, res) => {
+    const { type } = req.query;
+    try {
+        let joke;
+        switch (type) {
+            case 'Chuck':
+                const chuckResponse = await axios.get('https://api.chucknorris.io/jokes/random');
+                joke = chuckResponse.data.value;
+                break;
+            case 'Dad':
+                const dadResponse = await axios.get('https://icanhazdadjoke.com/', { headers: { 'Accept': 'application/json' } });
+                joke = dadResponse.data.joke;
+                break;
+            case 'Propio':
+                joke = await getInternalJoke();
+                if (!joke) {
+                    joke = 'Aun no hay chistes';
+                }
+                break;
+            default:
+                return res.status(400).json({ error: 'Parametro invalido, intenta usar "Chuck", "Dad" o "Propio"' });
+        }
+
+        return res.status(200).json({ joke });
+    } catch (error) {
+        return res.status(500).json({ error: 'Error al obtener el chiste' });
+    }
+};
+
+
