@@ -15,11 +15,11 @@ export const req_1 = async (req, res) => {
                 joke = dadResponse.data.joke;
                 break;
             case 'Propio':
-                joke = await getInternalJoke();
+                joke = await getInternalJoke(); 
                 if (!joke) {
-                    joke = 'Aun no hay chistes';
-                }
-                break;
+                     joke = 'Aun no hay chistes, cree uno!'
+                    }
+                 break;
             default:
                 return res.status(400).json({ error: 'Parametro invalido, intenta usar "Chuck", "Dad" o "Propio"' });
         }

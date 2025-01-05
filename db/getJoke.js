@@ -11,7 +11,7 @@ export const getInternalJoke = async () => {
         const jokes = database.collection('jokes');
 
         const joke = await jokes.findOne();
-        return joke ? joke.text : null;
+        return joke ? joke.texto : null;
     } finally {
         await client.close();
     }
