@@ -5,13 +5,13 @@ import { connect_to_mongo, disconnectDb} from '../db/connect_to_mongo.js';
 import { startServer, stopServer } from '../server.js';
 
 let server;
-//const testPort = 3000;
+const testPort = 3000;
 
 describe('GET /?type=$type', () => { 
   beforeAll(async () => {
    //process.env.NODE_ENV = 'test';
     await connect_to_mongo(); 
-    server=startServer(testPort);
+    server=startServer(3000);
   });   
 
   afterAll(async () => {
