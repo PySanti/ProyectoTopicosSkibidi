@@ -1,5 +1,5 @@
 import { load_secrets } from "../utils/load_secrets.js";
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 export async function connect_to_mongo() {
     console.log("conectando a mongo")
@@ -16,4 +16,9 @@ export async function connect_to_mongo() {
         .catch((error) => {
             console.error("Error de conexión a MongoDB:", error);
         });
+}
+
+export async function disconnectDb() {
+    await mongoose.disconnect();
+    console.log("Desconectado de MongoDB");
 }
