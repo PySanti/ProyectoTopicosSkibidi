@@ -1,6 +1,5 @@
 import request from 'supertest';
 import app from '../app.js';
-import mongoose from 'mongoose';
 import { connect_to_mongo, disconnectDb} from '../db/connect_to_mongo.js'; 
 import { startServer, stopServer } from '../server.js';
 
@@ -8,19 +7,10 @@ let server;
 const testPort = 3000;
 
 describe('GET /?type=$type', () => { 
-  // beforeAll(async () => {
-  //  //process.env.NODE_ENV = 'test';
-  //   await connect_to_mongo(); 
-  //   server=startServer(testPort);
-  // });   
-
   afterAll(async () => {
-     await disconnectDb(); 
-     await mongoose.connection.close();
+      await disconnectDb(); 
       await stopServer();
-     });
-
-
+    });
   it("GET /?type=Chuck debería traer un chiste de Chuck Norris", async () => {
     const response = await request(app).get("/?type=Chuck");
     expect(response.status).toBe(200);
