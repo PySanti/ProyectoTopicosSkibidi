@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import Joke from '../models/joke.js'; 
+import {Joke} from '../models/joke.js'; 
+
 
 
 export const validarObjectId = (req, res, next) => {

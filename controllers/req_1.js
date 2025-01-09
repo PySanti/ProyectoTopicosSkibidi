@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getInternalJoke } from '../db/getJoke.js'; 
 
 export const req_1 = async (req, res) => {
-    const { type } = req.query;
+    const { type } = req.params;
     try {
         let joke;
         switch (type) {
@@ -17,9 +17,9 @@ export const req_1 = async (req, res) => {
             case 'Propio':
                 joke = await getInternalJoke(); 
                 if (!joke) {
-                     joke = 'Aun no hay chistes, cree uno!'
-                    }
-                 break;
+                    joke = 'Aun no hay chistes, cree uno!'
+                }
+                break;
             default:
                 return res.status(400).json({ error: 'Parametro invalido, intenta usar "Chuck", "Dad" o "Propio"' });
         }

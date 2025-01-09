@@ -1,4 +1,4 @@
-import Joke from '../models/joke.js'; 
+import {Joke} from '../models/joke.js'; 
 
 
 export const eliminarJoke = async (req, res) => {

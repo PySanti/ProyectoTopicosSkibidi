@@ -1,4 +1,4 @@
-import Joke from '../models/joke.js'; 
+import {Joke} from '../models/joke.js'; 
 
 export const saveJoke = async (req, res) => {
     const { texto, autor, puntaje, categoria } = req.body;

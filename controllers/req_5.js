@@ -1,4 +1,4 @@
-import Joke from '../models/joke.js'; 
+import {Joke} from '../models/joke.js'; 
 
 export const getJokeById = async (req, res) => {
     const {id} = req.params;
