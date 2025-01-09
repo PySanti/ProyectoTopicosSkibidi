@@ -4,6 +4,10 @@ import {Joke} from '../models/joke.js';
 
 
 export const req_2 = async (req, res) => {
+    // Funcion creada para cumplir con el requerimiento 2
+    // Crea un chiste con los datos recibidos en el cuerpo de la consulta
+    // Retorna los datos del nuevo chiste creado
+
     const { texto, autor, puntaje, categoria } = req.body;
 
     if (!texto || !puntaje || !categoria) {

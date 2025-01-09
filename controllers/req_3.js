@@ -3,6 +3,8 @@ import {Joke} from '../models/joke.js';
 
 
 export const req_3 = async (req, res) => {
+    // Funcion creada para cumplir con el requisito 4
+    // Actualiza los datos del chiste asociado con el id recibido por url
     const { id } = req.params;
     const { texto, autor, puntaje, categoria } = req.body;
     if (mongoose.Types.ObjectId.isValid(id)){

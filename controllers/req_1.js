@@ -2,6 +2,12 @@ import axios from 'axios';
 import { getInternalJoke } from '../db/getJoke.js'; 
 
 export const req_1 = async (req, res) => {
+    // Funcion creada para cumplir con el requerimiento 5
+    // Recibe un parametro por url
+    // En caso de que el parametro sea 'Chuck', se retorna un chiste de la api chucknorris
+    // En caso de que el parametro sea 'Dad', se retorna un chiste de la api dadjoke
+    // En caso de que el parametro sea 'Propio' se retorna un chiste de la base de datos
+    // En caso de que no sea ninguna de las anteriores se retorna un mensaje de error
     const { type } = req.params;
     try {
         let joke;

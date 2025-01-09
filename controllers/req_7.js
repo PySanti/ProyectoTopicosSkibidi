@@ -4,6 +4,9 @@ import {jokeSchema, Joke} from "../models/joke.js"
 
 
 export const req_7 = async (req, res) => {
+    // Funcion creada para cumplir con el requisito 7
+    // Retorna los datos de todos los chistes con el puntaje recibido por url
+    // En caso de que el parametro no sea un numero, se retornara un mensaje de error
     let {puntaje} = req.params;
     try{
         if (!isNaN(Number(puntaje))){

@@ -2,6 +2,9 @@ import {Joke} from '../models/joke.js';
 
 
 export const req_4 = async (req, res) => {
+    // Funcion creada para cumplir con el requisito 4
+    // Busca el chiste relacionado con el id recibido por url y lo elimina
+    // En caso de que el id sea invalido y no se encuentre el chiste, se retorna un mensaje de error 
     const { id } = req.params;
     try {
         const joke = await Joke.findByIdAndDelete(id);
