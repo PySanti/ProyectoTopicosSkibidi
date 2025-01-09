@@ -6,8 +6,8 @@ export const req_7 = async (req, res) => {
     try{
         if (!isNaN(Number(puntaje))){
             puntaje = Number(puntaje)
-            const cantidad = await Joke.countDocuments({"puntaje":puntaje})
-            return res.status(200).json({"cantidad":cantidad})
+            const respuesta = await Joke.find({"puntaje":puntaje})
+            return res.status(200).json({"registros encontrados":respuesta})
         } else {
             return res.status(404).json({error : "puntaje invalido"})
         }
