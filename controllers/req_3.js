@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import {Joke} from '../models/joke.js'; 
 
+
 export const req_3 = async (req, res) => {
     const { id } = req.params;
     const { texto, autor, puntaje, categoria } = req.body;

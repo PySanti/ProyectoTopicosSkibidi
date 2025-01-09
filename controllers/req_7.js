@@ -1,6 +1,8 @@
 import { mongoose } from "mongoose";
 import {jokeSchema, Joke} from "../models/joke.js"
 
+
+
 export const req_7 = async (req, res) => {
     let {puntaje} = req.params;
     try{

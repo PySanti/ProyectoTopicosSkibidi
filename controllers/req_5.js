@@ -1,5 +1,7 @@
 import {Joke} from '../models/joke.js'; 
 
+
+
 export const req_5 = async (req, res) => {
     const {id} = req.params;
     try {

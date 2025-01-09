@@ -1,5 +1,8 @@
 import {Joke} from '../models/joke.js'; 
 
+
+
+
 export const req_2 = async (req, res) => {
     const { texto, autor, puntaje, categoria } = req.body;
 
