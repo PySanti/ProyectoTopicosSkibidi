@@ -1,7 +1,7 @@
 import {Joke} from '../models/joke.js'; 
 
 
-export const eliminarJoke = async (req, res) => {
+export const req_4 = async (req, res) => {
     const { id } = req.params;
     try {
         const joke = await Joke.findByIdAndDelete(id);

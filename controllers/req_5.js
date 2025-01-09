@@ -1,8 +1,7 @@
 import {Joke} from '../models/joke.js'; 
 
-export const getJokeById = async (req, res) => {
+export const req_5 = async (req, res) => {
     const {id} = req.params;
-    const {texto, autor, puntaje, categoria} = req.body;
     try {
         const joke = await Joke.findById(id);
         if (!joke) {
