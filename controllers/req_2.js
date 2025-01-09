@@ -1,6 +1,6 @@
 import {Joke} from '../models/joke.js'; 
 
-export const saveJoke = async (req, res) => {
+export const req_2 = async (req, res) => {
     const { texto, autor, puntaje, categoria } = req.body;
 
     if (!texto || !puntaje || !categoria) {
