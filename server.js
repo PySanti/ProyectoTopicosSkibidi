@@ -2,10 +2,10 @@ import app from './app.js';
 import { connect_to_mongo } from "./db/connect_to_mongo.js";
 
 const PORT = process.env.PORT || 3000;
-
+let server;
 export async function startServer() {
   await connect_to_mongo();
-  app.listen(PORT, () => {
+  server = app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
   });
 }
