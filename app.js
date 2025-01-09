@@ -6,8 +6,25 @@ import { req_4 } from "./controllers/req_4.js";
 import { req_5 } from "./controllers/req_5.js";
 import { req_6 } from "./controllers/req_6.js";
 import { req_7 } from "./controllers/req_7.js";
+import swaggerJsDoc from "swagger-jsdoc"
+import swaggerUi from "swagger-ui-express"
 
-const app = express();
+const app = express();  
+
+const swaggerOptions = {  
+    definition: {  
+        openapi: '3.0.0',
+        info: {  
+            title: 'Mi API',  
+            version: '1.0.0',  
+            description: 'Documentación de mi API',  
+        },  
+    },  
+    apis: ['app.js'],
+};  
+const swaggerDocs = swaggerJsDoc(swaggerOptions);  
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));  
+
 
 app.use(express.json());
 app.get("/req_1/:type", req_1);
